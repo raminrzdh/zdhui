@@ -18,6 +18,7 @@ const navigation = [
     title: 'Foundation',
     items: [
       { title: 'Color', href: '/docs/color' },
+      { title: 'Typography', href: '/docs/typography' },
     ],
   },
   {
