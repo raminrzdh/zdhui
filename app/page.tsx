@@ -11,8 +11,8 @@ export default function Home() {
 
         <div className='mt-6 flex gap-4'>
           <Button.Root variant='primary' asChild>
-            <Link href='/components'>
-              View Components
+            <Link href='/docs'>
+              View Documentation
             </Link>
           </Button.Root>
 
