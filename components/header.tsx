@@ -5,6 +5,10 @@ const DynamicThemeSwitch = dynamic(() => import('./theme-switch'), {
   ssr: false,
 });
 
+const DynamicRTLSwitch = dynamic(() => import('./rtl-switch'), {
+  ssr: false,
+});
+
 export default function Header() {
   return (
     <div className='border-b border-stroke-soft-200'>
@@ -22,7 +26,10 @@ export default function Header() {
           ZDH-UI
         </Link>
 
-        <DynamicThemeSwitch />
+        <div className='flex items-center gap-2'>
+          <DynamicRTLSwitch />
+          <DynamicThemeSwitch />
+        </div>
       </header>
     </div>
   );

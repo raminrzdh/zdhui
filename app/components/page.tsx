@@ -21,6 +21,7 @@ import * as Dropdown from '@/components/ui/dropdown';
 import * as Modal from '@/components/ui/modal';
 import * as Tooltip from '@/components/ui/tooltip';
 import * as Pagination from '@/components/ui/pagination';
+import { useRTL } from '@/components/rtl-provider';
 import { 
   RiHome2Line, 
   RiStarFill, 
@@ -46,20 +47,121 @@ export default function ComponentsPage() {
   const [switchChecked, setSwitchChecked] = useState(false);
   const [modalOpen, setModalOpen] = useState(false);
   const [currentPage, setCurrentPage] = useState(1);
+  const { direction } = useRTL();
   
   return (
     <div className='container mx-auto px-5 py-12'>
       <div className='mb-8'>
         <Link href='/' className='text-text-sub-600 hover:text-text-strong-950 flex items-center gap-2'>
           <RiHome2Line size={20} />
-          Back to Home
+          {direction === 'rtl' ? 'العودة للرئيسية' : 'Back to Home'}
         </Link>
       </div>
 
-      <h1 className='text-title-h2 text-text-strong-950 mb-2'>UI Components Showcase</h1>
-      <p className='text-text-sub-600 mb-12'>All available ZDH-UI components in one place</p>
+      <h1 className='text-title-h2 text-text-strong-950 mb-2'>
+        {direction === 'rtl' ? 'عرض مكونات الواجهة' : 'UI Components Showcase'}
+      </h1>
+      <p className='text-text-sub-600 mb-12'>
+        {direction === 'rtl' 
+          ? 'جميع مكونات ZDH-UI المتاحة في مكان واحد مع دعم RTL' 
+          : 'All available ZDH-UI components in one place with RTL support'}
+      </p>
 
       <div className='space-y-16'>
+        {/* RTL Support Demo */}
+        <section className='bg-gradient-to-r from-blue-50 to-purple-50 dark:from-blue-950/20 dark:to-purple-950/20 rounded-xl p-8'>
+          <h2 className='text-title-h4 text-text-strong-950 mb-4'>
+            {direction === 'rtl' ? '🌍 دعم اللغات من اليمين لليسار (RTL)' : '🌍 RTL Language Support'}
+          </h2>
+          <p className='text-text-sub-600 mb-6'>
+            {direction === 'rtl' 
+              ? 'جميع المكونات تدعم اللغات من اليمين لليسار (RTL) مثل العربية والعبرية والفارسية. استخدم زر RTL/LTR في الأعلى للتبديل بين الاتجاهات.'
+              : 'All components support Right-to-Left (RTL) languages like Arabic, Hebrew, and Persian. Use the RTL/LTR toggle in the header to switch directions.'}
+          </p>
+          
+          <div className='grid md:grid-cols-2 gap-6'>
+            {/* RTL Form Example */}
+            <div className='bg-bg-white-0 rounded-lg p-6 space-y-4'>
+              <h3 className='text-label-md text-text-strong-950 mb-4'>
+                {direction === 'rtl' ? 'مثال على نموذج' : 'Form Example'}
+              </h3>
+              <Input.Root>
+                <Input.Wrapper>
+                  <Input.Icon as={RiMailLine} />
+                  <Input.Input 
+                    placeholder={direction === 'rtl' ? 'أدخل بريدك الإلكتروني' : 'Enter your email'} 
+                  />
+                </Input.Wrapper>
+              </Input.Root>
+              <Input.Root>
+                <Input.Wrapper>
+                  <Input.Icon as={RiSearchLine} />
+                  <Input.Input 
+                    placeholder={direction === 'rtl' ? 'ابحث هنا...' : 'Search here...'} 
+                  />
+                </Input.Wrapper>
+              </Input.Root>
+              <Button.Root variant='primary' className='w-full'>
+                {direction === 'rtl' ? 'إرسال' : 'Submit'}
+              </Button.Root>
+            </div>
+
+            {/* RTL Content Example */}
+            <div className='bg-bg-white-0 rounded-lg p-6 space-y-4'>
+              <h3 className='text-label-md text-text-strong-950 mb-4'>
+                {direction === 'rtl' ? 'مثال على المحتوى' : 'Content Example'}
+              </h3>
+              <Alert.Root status='information' variant='light'>
+                <Alert.Icon as={RiInformationLine} />
+                <div>
+                  <div className='font-semibold'>
+                    {direction === 'rtl' ? 'معلومات' : 'Information'}
+                  </div>
+                  <div className='text-sm'>
+                    {direction === 'rtl' 
+                      ? 'هذا مثال على رسالة تنبيه بالعربية'
+                      : 'This is an example alert message'}
+                  </div>
+                </div>
+              </Alert.Root>
+              
+              <div className='flex flex-wrap gap-2'>
+                <Badge.Root color='blue'>
+                  {direction === 'rtl' ? 'جديد' : 'New'}
+                </Badge.Root>
+                <Badge.Root color='green'>
+                  {direction === 'rtl' ? 'نشط' : 'Active'}
+                </Badge.Root>
+                <Badge.Root color='orange'>
+                  {direction === 'rtl' ? 'قيد الانتظار' : 'Pending'}
+                </Badge.Root>
+              </div>
+
+              <Breadcrumb.Root>
+                <Breadcrumb.Item asChild>
+                  <Link href='/'>
+                    <Breadcrumb.Icon as={RiHome2Line} />
+                    {direction === 'rtl' ? 'الرئيسية' : 'Home'}
+                  </Link>
+                </Breadcrumb.Item>
+                <Breadcrumb.ArrowIcon as={RiArrowRightSLine} />
+                <Breadcrumb.Item>
+                  {direction === 'rtl' ? 'المكونات' : 'Components'}
+                </Breadcrumb.Item>
+              </Breadcrumb.Root>
+            </div>
+          </div>
+
+          <div className='mt-6 p-4 bg-blue-50 dark:bg-blue-950/30 rounded-lg'>
+            <p className='text-sm text-text-sub-600'>
+              <strong>{direction === 'rtl' ? '💡 نصيحة:' : '💡 Tip:'}</strong>{' '}
+              {direction === 'rtl'
+                ? 'يتم تطبيق دعم RTL تلقائياً على جميع المكونات. لا حاجة لتكوين إضافي!'
+                : 'RTL support is automatically applied to all components. No additional configuration needed!'}
+            </p>
+          </div>
+        </section>
+
         {/* Buttons */}
         <section>
           <h2 className='text-title-h4 text-text-strong-950 mb-6'>Buttons</h2>
