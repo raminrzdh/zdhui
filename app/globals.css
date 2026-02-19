@@ -394,6 +394,7 @@
 /* RTL Support */
 [dir='rtl'] {
   direction: rtl;
+  font-family: var(--font-estedad), var(--font-sans), sans-serif;
 }
 
 [dir='rtl'] .rtl\:rotate-180 {
@@ -442,4 +443,10 @@
   border-bottom-right-radius: 0;
   border-top-left-radius: 0.25rem;
   border-bottom-left-radius: 0.25rem;
+}
+
+/* RTL-aware transforms for Switch component */
+[dir='rtl'] .rtl\:data-\[state\=checked\]\:-translate-x-3[data-state='checked'] {
+  --tw-translate-x: -0.75rem;
+  transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
 }

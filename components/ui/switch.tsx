@@ -49,7 +49,7 @@ const Switch = React.forwardRef<
             'pointer-events-none relative block size-3',
             'transition-transform duration-200 ease-out',
             // checked
-            'data-[state=checked]:translate-x-3',
+            'data-[state=checked]:translate-x-3 rtl:data-[state=checked]:-translate-x-3',
             !disabled && [
               // before
               'before:absolute before:inset-y-0 before:left-1/2 before:w-3 before:-translate-x-1/2 before:rounded-full before:bg-static-white',
