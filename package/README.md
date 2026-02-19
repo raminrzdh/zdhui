@@ -1,6 +1,6 @@
 <p align="center">
   <a href="https://alignui.com">
-    <img src="./public/images/logo.svg" height="96">
+    <img src="./public/images/logo.jpg" height="96">
     <h3 align="center">AlignUI Design System</h3>
   </a>
   <p align="center">The Design System You Need</p>

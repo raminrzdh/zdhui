@@ -1,6 +1,5 @@
 import Link from 'next/link';
 import * as Button from '@/components/ui/button';
-import { RiGithubFill } from '@remixicon/react';
 
 export default function Home() {
   return (
@@ -17,7 +16,7 @@ export default function Home() {
             </Link>
           </Button.Root>
 
-          <Button.Root variant='neutral' asChild>
+          {/* <Button.Root variant='neutral' asChild>
             <a
               href='https://github.com/zdh-ui/zdh-ui-nextjs-typescript-starter'
               target='_blank'
@@ -25,44 +24,53 @@ export default function Home() {
               <Button.Icon as={RiGithubFill} />
               Give a star
             </a>
-          </Button.Root>
+          </Button.Root> */}
 
-          <Button.Root variant='neutral' mode='stroke' asChild>
+          {/* <Button.Root variant='neutral' mode='stroke' asChild>
             <Link href='https://zdh-ui.com/docs' target='_blank'>
               Read our docs
             </Link>
-          </Button.Root>
+          </Button.Root> */}
         </div>
 
         <div className='mt-12'>
-          <h2 className='text-lg text-text-primary font-semibold'>
+          <h2 className='text-lg text-text-strong-950 font-semibold'>
             What&apos;s Included:
           </h2>
           <ul className='ml-6 mt-3 flex list-disc flex-col gap-2 font-mono text-paragraph-sm font-medium text-text-sub-600'>
-            <li>Tailwind setup with ZDH-UI tokens.</li>
             <li>
-              Base components are stored in{' '}
+              <strong className='text-text-strong-950'>50+ UI Components</strong> - Buttons, Forms, Navigation, Data Display, Feedback, and more
+            </li>
+            <li>
+              <strong className='text-text-strong-950'>RTL Language Support</strong> - Built-in support for Arabic, Hebrew, Persian with Estedad font
+            </li>
+            <li>
+              <strong className='text-text-strong-950'>Dark Mode</strong> - Seamless theme switching with next-themes
+            </li>
+            <li>
+              <strong className='text-text-strong-950'>TypeScript</strong> - Fully typed components with excellent IDE support
+            </li>
+            <li>
+              <strong className='text-text-strong-950'>Tailwind CSS</strong> - Utility-first styling with ZDH-UI design tokens
+            </li>
+            <li>
+              Components in{' '}
               <code className='rounded bg-bg-weak-50 px-1 py-0.5 font-semibold text-text-strong-950'>
                 /components/ui
-              </code>{' '}
-              folder.
+              </code>
             </li>
             <li>
-              Utils are stored in{' '}
+              Utils in{' '}
               <code className='rounded bg-bg-weak-50 px-1 py-0.5 font-semibold text-text-strong-950'>
                 /utils
-              </code>{' '}
-              folder.
+              </code>
             </li>
             <li>
-              Custom hooks are stored in{' '}
+              Custom hooks in{' '}
               <code className='rounded bg-bg-weak-50 px-1 py-0.5 font-semibold text-text-strong-950'>
                 /hooks
-              </code>{' '}
-              folder.
+              </code>
             </li>
-            <li>Dark mode setup.</li>
-            <li>Inter font setup.</li>
           </ul>
         </div>
       </div>

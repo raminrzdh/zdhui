@@ -394,6 +394,9 @@
 /* RTL Support */
 [dir='rtl'] {
   direction: rtl;
+}
+
+[dir='rtl'] body {
   font-family: var(--font-estedad), var(--font-sans), sans-serif;
 }
 
