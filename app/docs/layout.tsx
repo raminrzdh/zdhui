@@ -15,6 +15,12 @@ const navigation = [
     ],
   },
   {
+    title: 'Foundation',
+    items: [
+      { title: 'Color', href: '/docs/color' },
+    ],
+  },
+  {
     title: 'Components',
     items: [
       { title: 'Accordion', href: '/docs/accordion' },
