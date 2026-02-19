@@ -10,5 +10,6 @@
     "class",
     "className",
     ".*ClassName"
-  ]
+  ],
+  "typescript.autoClosingTags": false
 }
