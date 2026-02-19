@@ -21,6 +21,11 @@ import * as Dropdown from '@/components/ui/dropdown';
 import * as Modal from '@/components/ui/modal';
 import * as Tooltip from '@/components/ui/tooltip';
 import * as Pagination from '@/components/ui/pagination';
+import * as Banner from '@/components/ui/banner';
+import * as Table from '@/components/ui/table';
+import * as Drawer from '@/components/ui/drawer';
+import * as Slider from '@/components/ui/slider';
+import * as Popover from '@/components/ui/popover';
 import { useRTL } from '@/components/rtl-provider';
 import { 
   RiHome2Line, 
@@ -46,7 +51,9 @@ export default function ComponentsPage() {
   const [textValue, setTextValue] = useState('');
   const [switchChecked, setSwitchChecked] = useState(false);
   const [modalOpen, setModalOpen] = useState(false);
+  const [drawerOpen, setDrawerOpen] = useState(false);
   const [currentPage, setCurrentPage] = useState(1);
+  const [sliderValue, setSliderValue] = useState([50]);
   const { direction } = useRTL();
   
   return (
@@ -169,11 +176,11 @@ export default function ComponentsPage() {
             <Button.Root>Default Button</Button.Root>
             <Button.Root variant='primary'>Primary</Button.Root>
             <Button.Root variant='neutral'>Neutral</Button.Root>
-            <Button.Root variant='danger'>Danger</Button.Root>
+            <Button.Root variant='error'>Error</Button.Root>
             <Button.Root variant='primary' mode='stroke'>Stroke</Button.Root>
             <Button.Root variant='primary' mode='ghost'>Ghost</Button.Root>
-            <Button.Root size='sm'>Small</Button.Root>
-            <Button.Root size='lg'>Large</Button.Root>
+            <Button.Root size='small'>Small</Button.Root>
+            <Button.Root size='medium'>Medium</Button.Root>
             <Button.Root>
               <Button.Icon as={RiStarFill} />
               With Icon
@@ -738,6 +745,216 @@ export default function ComponentsPage() {
                 </Pagination.NavButton>
               </Pagination.Root>
             </div>
+          </div>
+        </section>
+
+        {/* Banner */}
+        <section>
+          <h2 className='text-title-h4 text-text-strong-950 mb-6'>Banner</h2>
+          <div className='space-y-4'>
+            <Banner.Root status='information' variant='filled'>
+              <Banner.Content>
+                <Banner.Icon as={RiInformationLine} />
+                <span>New features are now available!</span>
+              </Banner.Content>
+            </Banner.Root>
+
+            <Banner.Root status='success' variant='light'>
+              <Banner.Content>
+                <Banner.Icon as={RiCheckboxCircleLine} />
+                <span>Your changes have been saved successfully</span>
+              </Banner.Content>
+            </Banner.Root>
+
+            <Banner.Root status='warning' variant='lighter'>
+              <Banner.Content>
+                <Banner.Icon as={RiAlertLine} />
+                <span>Please update your payment method</span>
+              </Banner.Content>
+            </Banner.Root>
+
+            <Banner.Root status='error' variant='stroke'>
+              <Banner.Content>
+                <Banner.Icon as={RiErrorWarningLine} />
+                <span>There was an error processing your request</span>
+              </Banner.Content>
+            </Banner.Root>
+          </div>
+        </section>
+
+        {/* Table */}
+        <section>
+          <h2 className='text-title-h4 text-text-strong-950 mb-6'>Table</h2>
+          <Table.Root>
+            <Table.Header>
+              <Table.Row>
+                <Table.Head>Name</Table.Head>
+                <Table.Head>Email</Table.Head>
+                <Table.Head>Role</Table.Head>
+                <Table.Head>Status</Table.Head>
+              </Table.Row>
+            </Table.Header>
+            <Table.Body>
+              <Table.Row>
+                <Table.Cell className='font-medium'>John Doe</Table.Cell>
+                <Table.Cell>john@example.com</Table.Cell>
+                <Table.Cell>Admin</Table.Cell>
+                <Table.Cell>
+                  <Badge.Root color='green'>Active</Badge.Root>
+                </Table.Cell>
+              </Table.Row>
+              <Table.Row>
+                <Table.Cell className='font-medium'>Jane Smith</Table.Cell>
+                <Table.Cell>jane@example.com</Table.Cell>
+                <Table.Cell>Editor</Table.Cell>
+                <Table.Cell>
+                  <Badge.Root color='green'>Active</Badge.Root>
+                </Table.Cell>
+              </Table.Row>
+              <Table.Row>
+                <Table.Cell className='font-medium'>Bob Johnson</Table.Cell>
+                <Table.Cell>bob@example.com</Table.Cell>
+                <Table.Cell>Viewer</Table.Cell>
+                <Table.Cell>
+                  <Badge.Root color='gray'>Inactive</Badge.Root>
+                </Table.Cell>
+              </Table.Row>
+            </Table.Body>
+          </Table.Root>
+        </section>
+
+        {/* Drawer */}
+        <section>
+          <h2 className='text-title-h4 text-text-strong-950 mb-6'>Drawer</h2>
+          <Drawer.Root open={drawerOpen} onOpenChange={setDrawerOpen}>
+            <Drawer.Trigger asChild>
+              <Button.Root variant='primary'>Open Drawer</Button.Root>
+            </Drawer.Trigger>
+            <Drawer.Content>
+              <Drawer.Header>
+                <Drawer.Title>Drawer Title</Drawer.Title>
+              </Drawer.Header>
+              <Drawer.Body>
+                <div className='p-5 space-y-4'>
+                  <p className='text-paragraph-sm text-text-sub-600'>
+                    This is a drawer component. It slides in from the right side of the screen.
+                  </p>
+                  <Input.Root>
+                    <Input.Wrapper>
+                      <Input.Input placeholder='Enter your name' />
+                    </Input.Wrapper>
+                  </Input.Root>
+                  <Input.Root>
+                    <Input.Wrapper>
+                      <Input.Icon as={RiMailLine} />
+                      <Input.Input placeholder='Enter your email' />
+                    </Input.Wrapper>
+                  </Input.Root>
+                </div>
+              </Drawer.Body>
+              <Drawer.Footer>
+                <Drawer.Close asChild>
+                  <Button.Root variant='neutral' mode='ghost'>Cancel</Button.Root>
+                </Drawer.Close>
+                <Button.Root variant='primary' onClick={() => setDrawerOpen(false)}>
+                  Save Changes
+                </Button.Root>
+              </Drawer.Footer>
+            </Drawer.Content>
+          </Drawer.Root>
+        </section>
+
+        {/* Slider */}
+        <section>
+          <h2 className='text-title-h4 text-text-strong-950 mb-6'>Slider</h2>
+          <div className='space-y-6 max-w-md'>
+            <div className='space-y-2'>
+              <div className='flex justify-between text-sm text-text-sub-600'>
+                <span>Volume</span>
+                <span>{sliderValue[0]}%</span>
+              </div>
+              <Slider.Root value={sliderValue} onValueChange={setSliderValue} max={100} step={1}>
+                <Slider.Thumb />
+              </Slider.Root>
+            </div>
+
+            <div className='space-y-2'>
+              <div className='flex justify-between text-sm text-text-sub-600'>
+                <span>Brightness</span>
+                <span>75%</span>
+              </div>
+              <Slider.Root defaultValue={[75]} max={100} step={1}>
+                <Slider.Thumb />
+              </Slider.Root>
+            </div>
+
+            <div className='space-y-2'>
+              <div className='flex justify-between text-sm text-text-sub-600'>
+                <span>Contrast</span>
+                <span>25%</span>
+              </div>
+              <Slider.Root defaultValue={[25]} max={100} step={1}>
+                <Slider.Thumb />
+              </Slider.Root>
+            </div>
+          </div>
+        </section>
+
+        {/* Popover */}
+        <section>
+          <h2 className='text-title-h4 text-text-strong-950 mb-6'>Popover</h2>
+          <div className='flex flex-wrap gap-4'>
+            <Popover.Root>
+              <Popover.Trigger asChild>
+                <Button.Root variant='neutral'>Open Popover</Button.Root>
+              </Popover.Trigger>
+              <Popover.Content>
+                <div className='space-y-2'>
+                  <h3 className='text-label-md text-text-strong-950'>Popover Title</h3>
+                  <p className='text-paragraph-sm text-text-sub-600'>
+                    This is a popover component with an arrow pointing to the trigger.
+                  </p>
+                </div>
+              </Popover.Content>
+            </Popover.Root>
+
+            <Popover.Root>
+              <Popover.Trigger asChild>
+                <Button.Root variant='neutral'>No Arrow</Button.Root>
+              </Popover.Trigger>
+              <Popover.Content showArrow={false}>
+                <div className='space-y-2'>
+                  <h3 className='text-label-md text-text-strong-950'>Without Arrow</h3>
+                  <p className='text-paragraph-sm text-text-sub-600'>
+                    This popover doesn't have an arrow.
+                  </p>
+                </div>
+              </Popover.Content>
+            </Popover.Root>
+
+            <Popover.Root>
+              <Popover.Trigger asChild>
+                <Button.Root variant='neutral'>With Form</Button.Root>
+              </Popover.Trigger>
+              <Popover.Content>
+                <div className='space-y-3 w-64'>
+                  <h3 className='text-label-md text-text-strong-950'>Quick Settings</h3>
+                  <Input.Root size='small'>
+                    <Input.Wrapper>
+                      <Input.Input placeholder='Search...' />
+                    </Input.Wrapper>
+                  </Input.Root>
+                  <div className='flex gap-2'>
+                    <Button.Root variant='primary' size='small' className='flex-1'>Apply</Button.Root>
+                    <Popover.Close asChild>
+                      <Button.Root variant='neutral' mode='ghost' size='small' className='flex-1'>
+                        Cancel
+                      </Button.Root>
+                    </Popover.Close>
+                  </div>
+                </div>
+              </Popover.Content>
+            </Popover.Root>
           </div>
         </section>
       </div>
