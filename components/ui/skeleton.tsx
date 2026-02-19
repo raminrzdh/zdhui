@@ -1,0 +1,20 @@
+// ZDH-UI Skeleton v0.0.0
+
+import { cn } from "@/utils/cn";
+
+function Skeleton({
+    className,
+    ...props
+}: React.HTMLAttributes<HTMLDivElement>) {
+    return (
+        <div
+            className={cn(
+                "animate-pulse rounded-md bg-neutral-400/10",
+                className
+            )}
+            {...props}
+        />
+    );
+}
+
+export { Skeleton };
