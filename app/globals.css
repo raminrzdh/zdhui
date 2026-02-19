@@ -396,8 +396,8 @@
   direction: rtl;
 }
 
-[dir='rtl'] body {
-  font-family: var(--font-estedad), var(--font-sans), sans-serif;
+[dir='rtl'] * {
+  font-family: 'Vazirmatn', var(--font-sans), sans-serif !important;
 }
 
 [dir='rtl'] .rtl\:rotate-180 {
