@@ -11,10 +11,8 @@
     "moduleResolution": "node",
     "resolveJsonModule": true,
     "isolatedModules": true,
-    "noEmit": false,
+    "noEmit": true,
     "jsx": "preserve",
-    "rootDir": "src",
-    "outDir": "dist",
     "baseUrl": ".",
     "paths": {
       "@/*": [
@@ -40,10 +38,10 @@
     ".uxpin-merge"
   ],
   "include": [
-    "src",
     "app",
     "components",
     "hooks",
+    "utils",
     ".next/types/**/*.ts"
   ]
 }
