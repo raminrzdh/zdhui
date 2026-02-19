@@ -453,3 +453,30 @@
   --tw-translate-x: -0.75rem;
   transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
 }
+
+/* RTL-aware drawer animations */
+[dir='rtl'] .rtl\:data-\[state\=open\]\:slide-in-from-left-full[data-state='open'] {
+  animation: slide-in-from-left 0.2s ease-out;
+}
+
+[dir='rtl'] .rtl\:data-\[state\=closed\]\:slide-out-to-left-full[data-state='closed'] {
+  animation: slide-out-to-left 0.2s ease-in;
+}
+
+@keyframes slide-in-from-left {
+  from {
+    transform: translateX(-100%);
+  }
+  to {
+    transform: translateX(0);
+  }
+}
+
+@keyframes slide-out-to-left {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-100%);
+  }
+}

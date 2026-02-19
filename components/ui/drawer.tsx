@@ -30,7 +30,8 @@ const DrawerOverlay = React.forwardRef<
       ref={forwardedRef}
       className={cn(
         // base
-        'fixed inset-0 z-50 grid grid-cols-1 place-items-end overflow-hidden bg-overlay backdrop-blur-[10px]',
+        'fixed inset-0 z-50 grid grid-cols-1 overflow-hidden bg-overlay backdrop-blur-[10px]',
+        'place-items-end rtl:place-items-start',
         // animation
         'data-[state=open]:animate-in data-[state=closed]:animate-out data-[state=closed]:fade-out-0 data-[state=open]:fade-in-0',
         className,
@@ -53,12 +54,12 @@ const DrawerContent = React.forwardRef<
           className={cn(
             // base
             'size-full max-w-[400px] overflow-y-auto',
-            'border-l border-stroke-soft-200 bg-bg-white-0',
+            'border-l rtl:border-l-0 rtl:border-r border-stroke-soft-200 bg-bg-white-0',
             // animation
             'data-[state=open]:duration-200 data-[state=open]:ease-out data-[state=open]:animate-in',
             'data-[state=closed]:duration-200 data-[state=closed]:ease-in data-[state=closed]:animate-out',
-            'data-[state=open]:slide-in-from-right-full',
-            'data-[state=closed]:slide-out-to-right-full',
+            'data-[state=open]:slide-in-from-right-full rtl:data-[state=open]:slide-in-from-left-full',
+            'data-[state=closed]:slide-out-to-right-full rtl:data-[state=closed]:slide-out-to-left-full',
             className,
           )}
           {...rest}

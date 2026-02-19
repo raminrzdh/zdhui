@@ -73,7 +73,7 @@ const PopoverClose = React.forwardRef<
 >(({ className, unstyled, ...rest }, forwardedRef) => (
   <PopoverPrimitive.Close
     ref={forwardedRef}
-    className={cn([!unstyled && 'absolute right-4 top-4'], className)}
+    className={cn([!unstyled && 'absolute right-4 top-4 rtl:right-auto rtl:left-4'], className)}
     {...rest}
   />
 ));

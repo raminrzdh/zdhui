@@ -67,7 +67,7 @@ const ModalContent = React.forwardRef<
                 <CompactButton.Root
                   variant='ghost'
                   size='large'
-                  className='absolute right-4 top-4'
+                  className='absolute right-4 top-4 rtl:right-auto rtl:left-4'
                 >
                   <CompactButton.Icon as={RiCloseLine} />
                 </CompactButton.Root>
@@ -96,7 +96,7 @@ function ModalHeader({
   return (
     <div
       className={cnExt(
-        'relative flex items-start gap-3.5 py-4 pl-5 pr-14 before:absolute before:inset-x-0 before:bottom-0 before:border-b before:border-stroke-soft-200',
+        'relative flex items-start gap-3.5 py-4 pl-5 pr-14 rtl:pl-14 rtl:pr-5 before:absolute before:inset-x-0 before:bottom-0 before:border-b before:border-stroke-soft-200',
         className,
       )}
       {...rest}
