@@ -71,47 +71,107 @@ export default function DocsPage() {
       </ul>
 
       <h2 className='text-title-h4 text-text-strong-950 mb-4 mt-12'>
-        50+ Components
+        What's Included
       </h2>
-      <p className='text-paragraph-md text-text-sub-600 mb-4'>
-        A comprehensive collection of UI components including:
+      <p className='text-paragraph-md text-text-sub-600 mb-6'>
+        A complete design system with everything you need to build modern web applications:
       </p>
-      <div className='grid grid-cols-2 md:grid-cols-3 gap-4 mb-8'>
-        <div className='rounded-lg bg-bg-weak-50 p-4'>
-          <h3 className='text-label-sm text-text-strong-950 mb-2'>Forms</h3>
-          <p className='text-paragraph-xs text-text-sub-600'>
-            Input, Select, Checkbox, Radio, Switch, Textarea
-          </p>
+
+      <div className='space-y-6 mb-8'>
+        <div className='rounded-lg border border-stroke-soft-200 p-6'>
+          <h3 className='text-label-md text-text-strong-950 mb-3'>Foundation</h3>
+          <ul className='space-y-2'>
+            <li className='text-paragraph-sm text-text-sub-600'>
+              <span className='font-medium text-text-strong-950'>Color System</span> - Comprehensive palette with core colors and semantic tokens
+            </li>
+            <li className='text-paragraph-sm text-text-sub-600'>
+              <span className='font-medium text-text-strong-950'>Typography</span> - Complete type scale with titles, labels, paragraphs, and subheadings
+            </li>
+          </ul>
         </div>
-        <div className='rounded-lg bg-bg-weak-50 p-4'>
-          <h3 className='text-label-sm text-text-strong-950 mb-2'>Navigation</h3>
-          <p className='text-paragraph-xs text-text-sub-600'>
-            Breadcrumb, Tabs, Pagination, Dropdown
-          </p>
+
+        <div className='rounded-lg border border-stroke-soft-200 p-6'>
+          <h3 className='text-label-md text-text-strong-950 mb-3'>59 Production-Ready Components</h3>
+          <div className='grid grid-cols-1 md:grid-cols-2 gap-4 mt-4'>
+            <div>
+              <h4 className='text-label-sm text-text-strong-950 mb-2'>Form Controls</h4>
+              <p className='text-paragraph-xs text-text-sub-600'>
+                Input, Select, Checkbox, Radio, Switch, Textarea, Slider, Color Picker, Date Picker, File Upload, Digit Input
+              </p>
+            </div>
+            <div>
+              <h4 className='text-label-sm text-text-strong-950 mb-2'>Navigation</h4>
+              <p className='text-paragraph-xs text-text-sub-600'>
+                Breadcrumb, Tabs (Horizontal/Vertical), Pagination, Dropdown, Command Menu
+              </p>
+            </div>
+            <div>
+              <h4 className='text-label-sm text-text-strong-950 mb-2'>Feedback & Overlays</h4>
+              <p className='text-paragraph-xs text-text-sub-600'>
+                Alert, Banner, Toast (Sonner), Progress Bar, Progress Circle, Modal, Drawer, Popover, Tooltip
+              </p>
+            </div>
+            <div>
+              <h4 className='text-label-sm text-text-strong-950 mb-2'>Data Display</h4>
+              <p className='text-paragraph-xs text-text-sub-600'>
+                Table, Badge, Status Badge, Avatar, Avatar Group, Tag, Skeleton, Divider
+              </p>
+            </div>
+            <div>
+              <h4 className='text-label-sm text-text-strong-950 mb-2'>Buttons</h4>
+              <p className='text-paragraph-xs text-text-sub-600'>
+                Button, Button Group, Compact Button, Link Button, Fancy Button, Social Button
+              </p>
+            </div>
+            <div>
+              <h4 className='text-label-sm text-text-strong-950 mb-2'>Layout & Structure</h4>
+              <p className='text-paragraph-xs text-text-sub-600'>
+                Accordion, Stepper (Horizontal/Vertical/Dot), Form Components, Hint, Label, KBD
+              </p>
+            </div>
+          </div>
         </div>
-        <div className='rounded-lg bg-bg-weak-50 p-4'>
-          <h3 className='text-label-sm text-text-strong-950 mb-2'>Feedback</h3>
-          <p className='text-paragraph-xs text-text-sub-600'>
-            Alert, Banner, Toast, Progress, Modal
-          </p>
-        </div>
-        <div className='rounded-lg bg-bg-weak-50 p-4'>
-          <h3 className='text-label-sm text-text-strong-950 mb-2'>Data Display</h3>
-          <p className='text-paragraph-xs text-text-sub-600'>
-            Table, Badge, Avatar, Tag, Tooltip
-          </p>
-        </div>
-        <div className='rounded-lg bg-bg-weak-50 p-4'>
-          <h3 className='text-label-sm text-text-strong-950 mb-2'>Layout</h3>
-          <p className='text-paragraph-xs text-text-sub-600'>
-            Drawer, Popover, Divider, Accordion
-          </p>
-        </div>
-        <div className='rounded-lg bg-bg-weak-50 p-4'>
-          <h3 className='text-label-sm text-text-strong-950 mb-2'>Buttons</h3>
-          <p className='text-paragraph-xs text-text-sub-600'>
-            Button, Button Group, Link Button, Social
-          </p>
+
+        <div className='rounded-lg border border-stroke-soft-200 p-6'>
+          <h3 className='text-label-md text-text-strong-950 mb-3'>Features</h3>
+          <div className='grid grid-cols-1 md:grid-cols-2 gap-3'>
+            <div className='flex items-start gap-2'>
+              <span className='text-success-base mt-0.5'>✓</span>
+              <span className='text-paragraph-sm text-text-sub-600'>
+                Built with Radix UI primitives for accessibility
+              </span>
+            </div>
+            <div className='flex items-start gap-2'>
+              <span className='text-success-base mt-0.5'>✓</span>
+              <span className='text-paragraph-sm text-text-sub-600'>
+                Styled with Tailwind CSS for easy customization
+              </span>
+            </div>
+            <div className='flex items-start gap-2'>
+              <span className='text-success-base mt-0.5'>✓</span>
+              <span className='text-paragraph-sm text-text-sub-600'>
+                Full TypeScript support with type definitions
+              </span>
+            </div>
+            <div className='flex items-start gap-2'>
+              <span className='text-success-base mt-0.5'>✓</span>
+              <span className='text-paragraph-sm text-text-sub-600'>
+                RTL language support (Arabic, Persian, Hebrew)
+              </span>
+            </div>
+            <div className='flex items-start gap-2'>
+              <span className='text-success-base mt-0.5'>✓</span>
+              <span className='text-paragraph-sm text-text-sub-600'>
+                Dark mode ready with CSS variables
+              </span>
+            </div>
+            <div className='flex items-start gap-2'>
+              <span className='text-success-base mt-0.5'>✓</span>
+              <span className='text-paragraph-sm text-text-sub-600'>
+                Responsive design for all screen sizes
+              </span>
+            </div>
+          </div>
         </div>
       </div>
 
