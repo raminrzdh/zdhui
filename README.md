@@ -23,6 +23,7 @@ This repository serves as a **component reference library** for building modern 
 - 🎯 **Tailwind CSS** - Utility-first CSS with custom design tokens
 - ♿ **Accessible** - Built with Radix UI primitives for accessibility
 - 🌗 **Dark Mode** - Built-in theme switching support
+- 🌍 **RTL Support** - Full Right-to-Left language support (Arabic, Hebrew, Persian, etc.)
 - 📱 **Responsive** - Mobile-first responsive design
 - ⚡ **Production Ready** - Battle-tested components
 - 🎭 **Fully Customizable** - Own the code, modify as needed

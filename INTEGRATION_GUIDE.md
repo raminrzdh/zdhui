@@ -441,6 +441,8 @@ export default function App({ children }) {
 - **Examples:** Check `app/components/page.tsx`
 - **Tailwind Config:** See `tailwind.config.ts`
 - **Type Definitions:** Review `utils/polymorphic.ts`
+- **RTL Guide:** See [RTL_GUIDE.md](RTL_GUIDE.md) for Right-to-Left language support
+- **Integration Guide:** See [INTEGRATION_GUIDE.md](INTEGRATION_GUIDE.md)
 
 ## 💡 Tips
 
